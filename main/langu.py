@@ -271,5 +271,9 @@ lang_flags = {
 }
 
 
-print(len(lang_flags))
-print(len(lang))
+def get_lang_code(language_name):
+    """Get the language code for a given language name."""
+    return lang.get(language_name.lower())
+
+if __name__ == "__main__":
+  print(get_lang_code("english"))
