@@ -9,11 +9,11 @@ def getter(id, lang):
     video = id,
     language = lang
     ytt_api = YouTubeTranscriptApi(
-        proxy_config=WebshareProxyConfig(
-            proxy_username="cfmamrji",
-            proxy_password="hijvyqtzb4el",
-        )
+    proxy_config=WebshareProxyConfig(
+       proxy_username = "http://cfmamrji:hijvyqtzb4el@proxy.webshare.io:80",
+       proxy_password = "http://cfmamrji:hijvyqtzb4el@proxy.webshare.io:80"
     )
+)
     yttp = ytt_api.fetch(video, languages=[language])
     transcript_text = "\n".join(snippet.text for snippet in yttp.snippets)
     return transcript_text    
