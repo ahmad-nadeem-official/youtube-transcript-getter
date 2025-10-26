@@ -29,12 +29,13 @@ if submit_button:
         if not video_input:
             st.warning("Please enter a valid YouTube video ID or link.")
         else:
+            if len(video_input) > 10:
             # Extract video ID safely
-            if "v=" in video_input:
-                video_id = video_input.split("v=")[1].split("&")[0]
-            else:
-                video_id = video_input.strip()
-
+              if "v=" in video_input:
+                  video_id = video_input.split("v=")[1].split("&")[0]
+              else:
+                  video_id = video_input.strip()
+  
             # Extract language name and code
             selected_lang = language_display.split(" ")[0]
             selected_code = lang[selected_lang]
